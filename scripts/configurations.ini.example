@@ -1,0 +1,10 @@
+[NVE API]
+api key = api_key
+
+[Spot Price DB]
+charset = utf8
+ip = ip
+name = name
+user = user
+pw = pw
+
