@@ -1,7 +1,6 @@
 #!/bin/bash
 # Copy notebooks to docs/source/notebooks so sphinx can parse them.
 cp ../notebooks/APIdemo/ForecastExample.ipynb source/notebooks/ForecastExample.ipynb
-cp ../notebooks/APIdemo/Running.ipynb source/notebooks/Running.ipynb
 cp ../notebooks/APIdemo/GettingStarted.ipynb source/notebooks/GettingStarted.ipynb
 cp ../notebooks/APIdemo/StochasticVariables.ipynb source/notebooks/StochasticVariables.ipynb
 

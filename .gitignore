@@ -83,7 +83,8 @@ instance/
 .scrapy
 
 # Sphinx documentation
-docs/_build/
+!docs/build/
+docs/build/jupyter_execute/notebooks
 
 # PyBuilder
 target/

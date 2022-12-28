@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Python Clients &mdash; HydroRL 0.1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" type="text/css" />
+      <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Python API Client" href="apiclient.html" />
+    <link rel="prev" title="Web API" href="apiweb.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> HydroRL
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Hydro System</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="hydro_system.html">The Hydro System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hps.html">The hps package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="hps.html#module-hps">The hps module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="hps.html#hps.HydroSystem"><code class="docutils literal notranslate"><span class="pre">HydroSystem</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="hps.html#hps.HydroSystem.add_edge"><code class="docutils literal notranslate"><span class="pre">HydroSystem.add_edge()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="hps.html#hps.HydroSystem.add_edges_from"><code class="docutils literal notranslate"><span class="pre">HydroSystem.add_edges_from()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="hps.html#hps.HydroSystem.add_node"><code class="docutils literal notranslate"><span class="pre">HydroSystem.add_node()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="hps.html#hps.HydroSystem.add_nodes_from"><code class="docutils literal notranslate"><span class="pre">HydroSystem.add_nodes_from()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="hps.html#hps.HydroSystem.bypasses"><code class="docutils literal notranslate"><span class="pre">HydroSystem.bypasses</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="hps.html#hps.HydroSystem.creeks"><code class="docutils literal notranslate"><span class="pre">HydroSystem.creeks</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="hps.html#hps.HydroSystem.discharges"><code class="docutils literal notranslate"><span class="pre">HydroSystem.discharges</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="hps.html#hps.HydroSystem.gates"><code class="docutils literal notranslate"><span class="pre">HydroSystem.gates</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="hps.html#hps.HydroSystem.get_subgraph"><code class="docutils literal notranslate"><span class="pre">HydroSystem.get_subgraph()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="hps.html#hps.HydroSystem.my_edges"><code class="docutils literal notranslate"><span class="pre">HydroSystem.my_edges</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="hps.html#hps.HydroSystem.my_nodes"><code class="docutils literal notranslate"><span class="pre">HydroSystem.my_nodes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="hps.html#hps.HydroSystem.oceans"><code class="docutils literal notranslate"><span class="pre">HydroSystem.oceans</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="hps.html#hps.HydroSystem.power_stations"><code class="docutils literal notranslate"><span class="pre">HydroSystem.power_stations</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="hps.html#hps.HydroSystem.reservoirs"><code class="docutils literal notranslate"><span class="pre">HydroSystem.reservoirs</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="hps.html#hps.HydroSystem.spillages"><code class="docutils literal notranslate"><span class="pre">HydroSystem.spillages</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="hps.html#hps.HydroSystem.to_dict"><code class="docutils literal notranslate"><span class="pre">HydroSystem.to_dict()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="hps.edges.html">hps.system.edges package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="hps.edges.html#module-hps.system.edges.bypass">hps.system.edges.bypass module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="hps.edges.html#module-hps.system.edges.discharge">hps.system.edges.discharge module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="hps.edges.html#module-hps.system.edges.spillage">hps.system.edges.spillage module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="hps.nodes.html">hps.system.nodes package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="hps.nodes.html#module-hps.system.nodes.creek">hps.nodes.creek module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="hps.nodes.html#module-hps.system.nodes.gate">hps.system.nodes.gate module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="hps.nodes.html#module-hps.system.nodes.ocean">hps.system.nodes.ocean module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="hps.nodes.html#module-hps.system.nodes.power_station">hps.system.nodes.power_station module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="hps.nodes.html#module-hps.system.nodes.reservoir">hps.system.nodes.reservoir module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Stochastic Variables</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/StochasticVariables.html">Stochastic Variables</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/StochasticVariables.html#background">Background</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/StochasticVariables.html#time-index">Time index</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/StochasticVariables.html#the-markov-chain">The Markov Chain</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reinforcement Learning</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="RL.html">Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="RL.html#actor-critic-basics">Actor-Critic Basics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="RL.html#exploration-vs-exploitation">Exploration vs. Exploitation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="RL.html#training-of-the-actor-network">Training of the actor network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="RL.html#training-of-the-critic-network">Training of the critic network</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="RL.html#additional-resources">Additional Resources</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="RL.html#bibliography">Bibliography</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Overview and Example Notebooks</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="apiweb.html">Web API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="apiweb.html#concepts">Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apiweb.html#documentation">Documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Python Clients</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="apiclient.html">Python API Client</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="apiclient.html#hps_api_client.apiclient.ApiClient"><code class="docutils literal notranslate"><span class="pre">ApiClient</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="apiclient.html#hps_api_client.apiclient.ApiClient.action"><code class="docutils literal notranslate"><span class="pre">ApiClient.action()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="apiclient.html#hps_api_client.apiclient.ApiClient.add_forecast_scenario"><code class="docutils literal notranslate"><span class="pre">ApiClient.add_forecast_scenario()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="apiclient.html#hps_api_client.apiclient.ApiClient.best_solution"><code class="docutils literal notranslate"><span class="pre">ApiClient.best_solution()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="apiclient.html#hps_api_client.apiclient.ApiClient.create_forecast"><code class="docutils literal notranslate"><span class="pre">ApiClient.create_forecast()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="apiclient.html#hps_api_client.apiclient.ApiClient.create_project"><code class="docutils literal notranslate"><span class="pre">ApiClient.create_project()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="apiclient.html#hps_api_client.apiclient.ApiClient.error_check"><code class="docutils literal notranslate"><span class="pre">ApiClient.error_check()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="apiclient.html#hps_api_client.apiclient.ApiClient.evaluate"><code class="docutils literal notranslate"><span class="pre">ApiClient.evaluate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="apiclient.html#hps_api_client.apiclient.ApiClient.evaluation_results"><code class="docutils literal notranslate"><span class="pre">ApiClient.evaluation_results()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="apiclient.html#hps_api_client.apiclient.ApiClient.fetch"><code class="docutils literal notranslate"><span class="pre">ApiClient.fetch()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="apiclient.html#hps_api_client.apiclient.ApiClient.filter_series"><code class="docutils literal notranslate"><span class="pre">ApiClient.filter_series()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="apiclient.html#hps_api_client.apiclient.ApiClient.get_evaluations"><code class="docutils literal notranslate"><span class="pre">ApiClient.get_evaluations()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="apiclient.html#hps_api_client.apiclient.ApiClient.get_forecast_data"><code class="docutils literal notranslate"><span class="pre">ApiClient.get_forecast_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="apiclient.html#hps_api_client.apiclient.ApiClient.get_forecast_scenarios"><code class="docutils literal notranslate"><span class="pre">ApiClient.get_forecast_scenarios()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="apiclient.html#hps_api_client.apiclient.ApiClient.get_forecasts"><code class="docutils literal notranslate"><span class="pre">ApiClient.get_forecasts()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="apiclient.html#hps_api_client.apiclient.ApiClient.get_hydro_systems"><code class="docutils literal notranslate"><span class="pre">ApiClient.get_hydro_systems()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="apiclient.html#hps_api_client.apiclient.ApiClient.get_projects"><code class="docutils literal notranslate"><span class="pre">ApiClient.get_projects()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="apiclient.html#hps_api_client.apiclient.ApiClient.get_reservoirs"><code class="docutils literal notranslate"><span class="pre">ApiClient.get_reservoirs()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="apiclient.html#hps_api_client.apiclient.ApiClient.get_run_details"><code class="docutils literal notranslate"><span class="pre">ApiClient.get_run_details()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="apiclient.html#hps_api_client.apiclient.ApiClient.get_runs"><code class="docutils literal notranslate"><span class="pre">ApiClient.get_runs()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="apiclient.html#hps_api_client.apiclient.ApiClient.get_settings_template"><code class="docutils literal notranslate"><span class="pre">ApiClient.get_settings_template()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="apiclient.html#hps_api_client.apiclient.ApiClient.plot_data"><code class="docutils literal notranslate"><span class="pre">ApiClient.plot_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="apiclient.html#hps_api_client.apiclient.ApiClient.plot_evaluation"><code class="docutils literal notranslate"><span class="pre">ApiClient.plot_evaluation()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="apiclient.html#hps_api_client.apiclient.ApiClient.plot_solution"><code class="docutils literal notranslate"><span class="pre">ApiClient.plot_solution()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="apiclient.html#hps_api_client.apiclient.ApiClient.post_no_body"><code class="docutils literal notranslate"><span class="pre">ApiClient.post_no_body()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="apiclient.html#hps_api_client.apiclient.ApiClient.post_with_body"><code class="docutils literal notranslate"><span class="pre">ApiClient.post_with_body()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="apiclient.html#hps_api_client.apiclient.ApiClient.post_with_body_no_response"><code class="docutils literal notranslate"><span class="pre">ApiClient.post_with_body_no_response()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="apiclient.html#hps_api_client.apiclient.ApiClient.prep_content"><code class="docutils literal notranslate"><span class="pre">ApiClient.prep_content()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="apiclient.html#hps_api_client.apiclient.ApiClient.put_with_body"><code class="docutils literal notranslate"><span class="pre">ApiClient.put_with_body()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="apiclient.html#hps_api_client.apiclient.ApiClient.run"><code class="docutils literal notranslate"><span class="pre">ApiClient.run()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="apiclient.html#hps_api_client.apiclient.ApiClient.show_progress"><code class="docutils literal notranslate"><span class="pre">ApiClient.show_progress()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="apiclient.html#hps_api_client.apiclient.ApiClient.terminate_run"><code class="docutils literal notranslate"><span class="pre">ApiClient.terminate_run()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="apiclient.html#hps_api_client.apiclient.get_attr"><code class="docutils literal notranslate"><span class="pre">get_attr()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="apiproxy.html">Python API Proxy</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="apiproxy.html#hps_api_client.apiproxy.ApiProxy"><code class="docutils literal notranslate"><span class="pre">ApiProxy</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="apiproxy.html#hps_api_client.apiproxy.ApiProxy.add_forecast"><code class="docutils literal notranslate"><span class="pre">ApiProxy.add_forecast()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="apiproxy.html#hps_api_client.apiproxy.ApiProxy.build_data_frame"><code class="docutils literal notranslate"><span class="pre">ApiProxy.build_data_frame()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="apiproxy.html#hps_api_client.apiproxy.ApiProxy.create_project"><code class="docutils literal notranslate"><span class="pre">ApiProxy.create_project()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="apiproxy.html#hps_api_client.apiproxy.ApiProxy.evaluate"><code class="docutils literal notranslate"><span class="pre">ApiProxy.evaluate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="apiproxy.html#hps_api_client.apiproxy.ApiProxy.get_evaluation"><code class="docutils literal notranslate"><span class="pre">ApiProxy.get_evaluation()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="apiproxy.html#hps_api_client.apiproxy.ApiProxy.get_evaluations"><code class="docutils literal notranslate"><span class="pre">ApiProxy.get_evaluations()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="apiproxy.html#hps_api_client.apiproxy.ApiProxy.get_forecast_data"><code class="docutils literal notranslate"><span class="pre">ApiProxy.get_forecast_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="apiproxy.html#hps_api_client.apiproxy.ApiProxy.get_forecast_scenarios"><code class="docutils literal notranslate"><span class="pre">ApiProxy.get_forecast_scenarios()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="apiproxy.html#hps_api_client.apiproxy.ApiProxy.get_forecasts"><code class="docutils literal notranslate"><span class="pre">ApiProxy.get_forecasts()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="apiproxy.html#hps_api_client.apiproxy.ApiProxy.get_hydro_systems"><code class="docutils literal notranslate"><span class="pre">ApiProxy.get_hydro_systems()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="apiproxy.html#hps_api_client.apiproxy.ApiProxy.get_projects"><code class="docutils literal notranslate"><span class="pre">ApiProxy.get_projects()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="apiproxy.html#hps_api_client.apiproxy.ApiProxy.get_reservoirs"><code class="docutils literal notranslate"><span class="pre">ApiProxy.get_reservoirs()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="apiproxy.html#hps_api_client.apiproxy.ApiProxy.get_runs"><code class="docutils literal notranslate"><span class="pre">ApiProxy.get_runs()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="apiproxy.html#hps_api_client.apiproxy.ApiProxy.get_scenario_data"><code class="docutils literal notranslate"><span class="pre">ApiProxy.get_scenario_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="apiproxy.html#hps_api_client.apiproxy.ApiProxy.get_settings_template"><code class="docutils literal notranslate"><span class="pre">ApiProxy.get_settings_template()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="apiproxy.html#hps_api_client.apiproxy.ApiProxy.get_solution"><code class="docutils literal notranslate"><span class="pre">ApiProxy.get_solution()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="apiproxy.html#hps_api_client.apiproxy.ApiProxy.plot_evaluation"><code class="docutils literal notranslate"><span class="pre">ApiProxy.plot_evaluation()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="apiproxy.html#hps_api_client.apiproxy.ApiProxy.plot_solution"><code class="docutils literal notranslate"><span class="pre">ApiProxy.plot_solution()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="apiproxy.html#hps_api_client.apiproxy.ApiProxy.run"><code class="docutils literal notranslate"><span class="pre">ApiProxy.run()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="apiproxy.html#hps_api_client.apiproxy.ApiProxy.show_progress"><code class="docutils literal notranslate"><span class="pre">ApiProxy.show_progress()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="apiproxy.html#hps_api_client.apiproxy.ApiProxy.terminate_run"><code class="docutils literal notranslate"><span class="pre">ApiProxy.terminate_run()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="poco.html">Python Poco module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="poco.html#hps_api_client.poco.AgentAlgorithm"><code class="docutils literal notranslate"><span class="pre">AgentAlgorithm</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="poco.html#hps_api_client.poco.AgentAlgorithm.A2C"><code class="docutils literal notranslate"><span class="pre">AgentAlgorithm.A2C</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="poco.html#hps_api_client.poco.AgentAlgorithm.DDPG"><code class="docutils literal notranslate"><span class="pre">AgentAlgorithm.DDPG</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="poco.html#hps_api_client.poco.AgentAlgorithm.PPO"><code class="docutils literal notranslate"><span class="pre">AgentAlgorithm.PPO</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="poco.html#hps_api_client.poco.AgentAlgorithm.SAC"><code class="docutils literal notranslate"><span class="pre">AgentAlgorithm.SAC</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="poco.html#hps_api_client.poco.AgentAlgorithm.TD3"><code class="docutils literal notranslate"><span class="pre">AgentAlgorithm.TD3</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="poco.html#hps_api_client.poco.ApiForecast"><code class="docutils literal notranslate"><span class="pre">ApiForecast</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="poco.html#hps_api_client.poco.ApiForecast.to_dict"><code class="docutils literal notranslate"><span class="pre">ApiForecast.to_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="poco.html#hps_api_client.poco.ApiForecast.to_json"><code class="docutils literal notranslate"><span class="pre">ApiForecast.to_json()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="poco.html#hps_api_client.poco.ApiForecast.to_pandas"><code class="docutils literal notranslate"><span class="pre">ApiForecast.to_pandas()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="poco.html#hps_api_client.poco.ApiForecastCollection"><code class="docutils literal notranslate"><span class="pre">ApiForecastCollection</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="poco.html#hps_api_client.poco.ApiForecastCollection.to_dict"><code class="docutils literal notranslate"><span class="pre">ApiForecastCollection.to_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="poco.html#hps_api_client.poco.ApiForecastCollection.to_json"><code class="docutils literal notranslate"><span class="pre">ApiForecastCollection.to_json()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="poco.html#hps_api_client.poco.ApiForecastCollection.to_pandas"><code class="docutils literal notranslate"><span class="pre">ApiForecastCollection.to_pandas()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="poco.html#hps_api_client.poco.ApiForecastScenario"><code class="docutils literal notranslate"><span class="pre">ApiForecastScenario</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="poco.html#hps_api_client.poco.ApiForecastScenario.to_dict"><code class="docutils literal notranslate"><span class="pre">ApiForecastScenario.to_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="poco.html#hps_api_client.poco.ApiForecastScenario.to_json"><code class="docutils literal notranslate"><span class="pre">ApiForecastScenario.to_json()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="poco.html#hps_api_client.poco.ApiForecastScenario.to_pandas"><code class="docutils literal notranslate"><span class="pre">ApiForecastScenario.to_pandas()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="poco.html#hps_api_client.poco.ApiForecastScenarioCollection"><code class="docutils literal notranslate"><span class="pre">ApiForecastScenarioCollection</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="poco.html#hps_api_client.poco.ApiForecastScenarioCollection.to_dict"><code class="docutils literal notranslate"><span class="pre">ApiForecastScenarioCollection.to_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="poco.html#hps_api_client.poco.ApiForecastScenarioCollection.to_json"><code class="docutils literal notranslate"><span class="pre">ApiForecastScenarioCollection.to_json()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="poco.html#hps_api_client.poco.ApiForecastScenarioCollection.to_pandas"><code class="docutils literal notranslate"><span class="pre">ApiForecastScenarioCollection.to_pandas()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="poco.html#hps_api_client.poco.ApiForecastScenarios"><code class="docutils literal notranslate"><span class="pre">ApiForecastScenarios</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="poco.html#hps_api_client.poco.ApiForecastScenarios.to_dict"><code class="docutils literal notranslate"><span class="pre">ApiForecastScenarios.to_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="poco.html#hps_api_client.poco.ApiForecastScenarios.to_json"><code class="docutils literal notranslate"><span class="pre">ApiForecastScenarios.to_json()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="poco.html#hps_api_client.poco.ApiForecastScenarios.to_pandas"><code class="docutils literal notranslate"><span class="pre">ApiForecastScenarios.to_pandas()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="poco.html#hps_api_client.poco.ApiForecastScenariosCollection"><code class="docutils literal notranslate"><span class="pre">ApiForecastScenariosCollection</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="poco.html#hps_api_client.poco.ApiForecastScenariosCollection.to_dict"><code class="docutils literal notranslate"><span class="pre">ApiForecastScenariosCollection.to_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="poco.html#hps_api_client.poco.ApiForecastScenariosCollection.to_json"><code class="docutils literal notranslate"><span class="pre">ApiForecastScenariosCollection.to_json()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="poco.html#hps_api_client.poco.ApiForecastScenariosCollection.to_pandas"><code class="docutils literal notranslate"><span class="pre">ApiForecastScenariosCollection.to_pandas()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="poco.html#hps_api_client.poco.ApiHydroSystem"><code class="docutils literal notranslate"><span class="pre">ApiHydroSystem</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="poco.html#hps_api_client.poco.ApiHydroSystem.to_dict"><code class="docutils literal notranslate"><span class="pre">ApiHydroSystem.to_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="poco.html#hps_api_client.poco.ApiHydroSystem.to_json"><code class="docutils literal notranslate"><span class="pre">ApiHydroSystem.to_json()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="poco.html#hps_api_client.poco.ApiHydroSystem.to_pandas"><code class="docutils literal notranslate"><span class="pre">ApiHydroSystem.to_pandas()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="poco.html#hps_api_client.poco.ApiHydroSystemCollection"><code class="docutils literal notranslate"><span class="pre">ApiHydroSystemCollection</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="poco.html#hps_api_client.poco.ApiHydroSystemCollection.to_dict"><code class="docutils literal notranslate"><span class="pre">ApiHydroSystemCollection.to_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="poco.html#hps_api_client.poco.ApiHydroSystemCollection.to_json"><code class="docutils literal notranslate"><span class="pre">ApiHydroSystemCollection.to_json()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="poco.html#hps_api_client.poco.ApiHydroSystemCollection.to_pandas"><code class="docutils literal notranslate"><span class="pre">ApiHydroSystemCollection.to_pandas()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="poco.html#hps_api_client.poco.ApiProject"><code class="docutils literal notranslate"><span class="pre">ApiProject</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="poco.html#hps_api_client.poco.ApiProject.to_dict"><code class="docutils literal notranslate"><span class="pre">ApiProject.to_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="poco.html#hps_api_client.poco.ApiProject.to_json"><code class="docutils literal notranslate"><span class="pre">ApiProject.to_json()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="poco.html#hps_api_client.poco.ApiProject.to_pandas"><code class="docutils literal notranslate"><span class="pre">ApiProject.to_pandas()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="poco.html#hps_api_client.poco.ApiProjectCollection"><code class="docutils literal notranslate"><span class="pre">ApiProjectCollection</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="poco.html#hps_api_client.poco.ApiProjectCollection.to_dict"><code class="docutils literal notranslate"><span class="pre">ApiProjectCollection.to_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="poco.html#hps_api_client.poco.ApiProjectCollection.to_json"><code class="docutils literal notranslate"><span class="pre">ApiProjectCollection.to_json()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="poco.html#hps_api_client.poco.ApiProjectCollection.to_pandas"><code class="docutils literal notranslate"><span class="pre">ApiProjectCollection.to_pandas()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="poco.html#hps_api_client.poco.ApiReportData"><code class="docutils literal notranslate"><span class="pre">ApiReportData</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="poco.html#hps_api_client.poco.ApiReportData.to_dict"><code class="docutils literal notranslate"><span class="pre">ApiReportData.to_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="poco.html#hps_api_client.poco.ApiReportData.to_json"><code class="docutils literal notranslate"><span class="pre">ApiReportData.to_json()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="poco.html#hps_api_client.poco.ApiReportData.to_pandas"><code class="docutils literal notranslate"><span class="pre">ApiReportData.to_pandas()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="poco.html#hps_api_client.poco.ApiReportDataCollection"><code class="docutils literal notranslate"><span class="pre">ApiReportDataCollection</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="poco.html#hps_api_client.poco.ApiReportDataCollection.to_dict"><code class="docutils literal notranslate"><span class="pre">ApiReportDataCollection.to_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="poco.html#hps_api_client.poco.ApiReportDataCollection.to_json"><code class="docutils literal notranslate"><span class="pre">ApiReportDataCollection.to_json()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="poco.html#hps_api_client.poco.ApiReportDataCollection.to_pandas"><code class="docutils literal notranslate"><span class="pre">ApiReportDataCollection.to_pandas()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="poco.html#hps_api_client.poco.ApiReportEpisode"><code class="docutils literal notranslate"><span class="pre">ApiReportEpisode</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="poco.html#hps_api_client.poco.ApiReportEpisode.to_dict"><code class="docutils literal notranslate"><span class="pre">ApiReportEpisode.to_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="poco.html#hps_api_client.poco.ApiReportEpisode.to_json"><code class="docutils literal notranslate"><span class="pre">ApiReportEpisode.to_json()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="poco.html#hps_api_client.poco.ApiReportEpisode.to_pandas"><code class="docutils literal notranslate"><span class="pre">ApiReportEpisode.to_pandas()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="poco.html#hps_api_client.poco.ApiReportEpisodeCollection"><code class="docutils literal notranslate"><span class="pre">ApiReportEpisodeCollection</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="poco.html#hps_api_client.poco.ApiReportEpisodeCollection.to_dict"><code class="docutils literal notranslate"><span class="pre">ApiReportEpisodeCollection.to_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="poco.html#hps_api_client.poco.ApiReportEpisodeCollection.to_json"><code class="docutils literal notranslate"><span class="pre">ApiReportEpisodeCollection.to_json()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="poco.html#hps_api_client.poco.ApiReportEpisodeCollection.to_pandas"><code class="docutils literal notranslate"><span class="pre">ApiReportEpisodeCollection.to_pandas()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="poco.html#hps_api_client.poco.ApiReservoir"><code class="docutils literal notranslate"><span class="pre">ApiReservoir</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="poco.html#hps_api_client.poco.ApiReservoir.to_dict"><code class="docutils literal notranslate"><span class="pre">ApiReservoir.to_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="poco.html#hps_api_client.poco.ApiReservoir.to_json"><code class="docutils literal notranslate"><span class="pre">ApiReservoir.to_json()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="poco.html#hps_api_client.poco.ApiReservoir.to_pandas"><code class="docutils literal notranslate"><span class="pre">ApiReservoir.to_pandas()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="poco.html#hps_api_client.poco.ApiReservoirCollection"><code class="docutils literal notranslate"><span class="pre">ApiReservoirCollection</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="poco.html#hps_api_client.poco.ApiReservoirCollection.to_dict"><code class="docutils literal notranslate"><span class="pre">ApiReservoirCollection.to_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="poco.html#hps_api_client.poco.ApiReservoirCollection.to_json"><code class="docutils literal notranslate"><span class="pre">ApiReservoirCollection.to_json()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="poco.html#hps_api_client.poco.ApiReservoirCollection.to_pandas"><code class="docutils literal notranslate"><span class="pre">ApiReservoirCollection.to_pandas()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="poco.html#hps_api_client.poco.ApiRun"><code class="docutils literal notranslate"><span class="pre">ApiRun</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="poco.html#hps_api_client.poco.ApiRun.to_dict"><code class="docutils literal notranslate"><span class="pre">ApiRun.to_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="poco.html#hps_api_client.poco.ApiRun.to_json"><code class="docutils literal notranslate"><span class="pre">ApiRun.to_json()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="poco.html#hps_api_client.poco.ApiRun.to_pandas"><code class="docutils literal notranslate"><span class="pre">ApiRun.to_pandas()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="poco.html#hps_api_client.poco.ApiRunCollection"><code class="docutils literal notranslate"><span class="pre">ApiRunCollection</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="poco.html#hps_api_client.poco.ApiRunCollection.to_dict"><code class="docutils literal notranslate"><span class="pre">ApiRunCollection.to_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="poco.html#hps_api_client.poco.ApiRunCollection.to_json"><code class="docutils literal notranslate"><span class="pre">ApiRunCollection.to_json()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="poco.html#hps_api_client.poco.ApiRunCollection.to_pandas"><code class="docutils literal notranslate"><span class="pre">ApiRunCollection.to_pandas()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="poco.html#hps_api_client.poco.ApiStepSeries"><code class="docutils literal notranslate"><span class="pre">ApiStepSeries</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="poco.html#hps_api_client.poco.ApiStepSeries.to_dict"><code class="docutils literal notranslate"><span class="pre">ApiStepSeries.to_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="poco.html#hps_api_client.poco.ApiStepSeries.to_json"><code class="docutils literal notranslate"><span class="pre">ApiStepSeries.to_json()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="poco.html#hps_api_client.poco.ApiStepSeries.to_pandas"><code class="docutils literal notranslate"><span class="pre">ApiStepSeries.to_pandas()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="poco.html#hps_api_client.poco.ApiStepSeriesCollection"><code class="docutils literal notranslate"><span class="pre">ApiStepSeriesCollection</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="poco.html#hps_api_client.poco.ApiStepSeriesCollection.to_dict"><code class="docutils literal notranslate"><span class="pre">ApiStepSeriesCollection.to_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="poco.html#hps_api_client.poco.ApiStepSeriesCollection.to_json"><code class="docutils literal notranslate"><span class="pre">ApiStepSeriesCollection.to_json()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="poco.html#hps_api_client.poco.ApiStepSeriesCollection.to_pandas"><code class="docutils literal notranslate"><span class="pre">ApiStepSeriesCollection.to_pandas()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="poco.html#hps_api_client.poco.ApiTimeSeries"><code class="docutils literal notranslate"><span class="pre">ApiTimeSeries</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="poco.html#hps_api_client.poco.ApiTimeSeries.to_dict"><code class="docutils literal notranslate"><span class="pre">ApiTimeSeries.to_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="poco.html#hps_api_client.poco.ApiTimeSeries.to_json"><code class="docutils literal notranslate"><span class="pre">ApiTimeSeries.to_json()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="poco.html#hps_api_client.poco.ApiTimeSeries.to_pandas"><code class="docutils literal notranslate"><span class="pre">ApiTimeSeries.to_pandas()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="poco.html#hps_api_client.poco.ApiTimeSeriesCollection"><code class="docutils literal notranslate"><span class="pre">ApiTimeSeriesCollection</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="poco.html#hps_api_client.poco.ApiTimeSeriesCollection.to_dict"><code class="docutils literal notranslate"><span class="pre">ApiTimeSeriesCollection.to_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="poco.html#hps_api_client.poco.ApiTimeSeriesCollection.to_json"><code class="docutils literal notranslate"><span class="pre">ApiTimeSeriesCollection.to_json()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="poco.html#hps_api_client.poco.ApiTimeSeriesCollection.to_pandas"><code class="docutils literal notranslate"><span class="pre">ApiTimeSeriesCollection.to_pandas()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="poco.html#hps_api_client.poco.EndStateIncentive"><code class="docutils literal notranslate"><span class="pre">EndStateIncentive</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="poco.html#hps_api_client.poco.EndStateIncentive.LastEnergyPrice"><code class="docutils literal notranslate"><span class="pre">EndStateIncentive.LastEnergyPrice</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="poco.html#hps_api_client.poco.EndStateIncentive.MeanEnergyPrice"><code class="docutils literal notranslate"><span class="pre">EndStateIncentive.MeanEnergyPrice</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="poco.html#hps_api_client.poco.EndStateIncentive.Off"><code class="docutils literal notranslate"><span class="pre">EndStateIncentive.Off</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="poco.html#hps_api_client.poco.EndStateIncentive.ProvidedEndEnergyPrice"><code class="docutils literal notranslate"><span class="pre">EndStateIncentive.ProvidedEndEnergyPrice</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="poco.html#hps_api_client.poco.Noise"><code class="docutils literal notranslate"><span class="pre">Noise</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="poco.html#hps_api_client.poco.Noise.Off"><code class="docutils literal notranslate"><span class="pre">Noise.Off</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="poco.html#hps_api_client.poco.Noise.StandardDev"><code class="docutils literal notranslate"><span class="pre">Noise.StandardDev</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="poco.html#hps_api_client.poco.Noise.White"><code class="docutils literal notranslate"><span class="pre">Noise.White</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="poco.html#hps_api_client.poco.RunDetails"><code class="docutils literal notranslate"><span class="pre">RunDetails</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="poco.html#hps_api_client.poco.RunDetails.to_dict"><code class="docutils literal notranslate"><span class="pre">RunDetails.to_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="poco.html#hps_api_client.poco.RunDetails.to_json"><code class="docutils literal notranslate"><span class="pre">RunDetails.to_json()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="poco.html#hps_api_client.poco.RunDetails.to_pandas"><code class="docutils literal notranslate"><span class="pre">RunDetails.to_pandas()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="poco.html#hps_api_client.poco.RunDetailsCollection"><code class="docutils literal notranslate"><span class="pre">RunDetailsCollection</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="poco.html#hps_api_client.poco.RunDetailsCollection.to_dict"><code class="docutils literal notranslate"><span class="pre">RunDetailsCollection.to_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="poco.html#hps_api_client.poco.RunDetailsCollection.to_json"><code class="docutils literal notranslate"><span class="pre">RunDetailsCollection.to_json()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="poco.html#hps_api_client.poco.RunDetailsCollection.to_pandas"><code class="docutils literal notranslate"><span class="pre">RunDetailsCollection.to_pandas()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="poco.html#hps_api_client.poco.RunSettings"><code class="docutils literal notranslate"><span class="pre">RunSettings</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="poco.html#hps_api_client.poco.RunSettings.to_dict"><code class="docutils literal notranslate"><span class="pre">RunSettings.to_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="poco.html#hps_api_client.poco.RunSettings.to_json"><code class="docutils literal notranslate"><span class="pre">RunSettings.to_json()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="poco.html#hps_api_client.poco.RunSettings.to_pandas"><code class="docutils literal notranslate"><span class="pre">RunSettings.to_pandas()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="poco.html#hps_api_client.poco.RunSettingsCollection"><code class="docutils literal notranslate"><span class="pre">RunSettingsCollection</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="poco.html#hps_api_client.poco.RunSettingsCollection.to_dict"><code class="docutils literal notranslate"><span class="pre">RunSettingsCollection.to_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="poco.html#hps_api_client.poco.RunSettingsCollection.to_json"><code class="docutils literal notranslate"><span class="pre">RunSettingsCollection.to_json()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="poco.html#hps_api_client.poco.RunSettingsCollection.to_pandas"><code class="docutils literal notranslate"><span class="pre">RunSettingsCollection.to_pandas()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="poco.html#hps_api_client.poco.StepResolution"><code class="docutils literal notranslate"><span class="pre">StepResolution</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="poco.html#hps_api_client.poco.StepResolution.Day"><code class="docutils literal notranslate"><span class="pre">StepResolution.Day</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="poco.html#hps_api_client.poco.StepResolution.Hour"><code class="docutils literal notranslate"><span class="pre">StepResolution.Hour</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="poco.html#hps_api_client.poco.StepResolution.Week"><code class="docutils literal notranslate"><span class="pre">StepResolution.Week</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks.html">Example Notebooks</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/GettingStarted.html">Getting started</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/GettingStarted.html#create-client">Create client</a></li>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/GettingStarted.html#list-available-projects">List available projects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/GettingStarted.html#list-hydrosystems">List hydrosystems</a></li>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/GettingStarted.html#create-a-new-project">Create a new project</a></li>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/GettingStarted.html#get-forecasts">Get forecasts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/GettingStarted.html#get-reservoirs-for-hydro-system">Get reservoirs for hydro system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/GettingStarted.html#start-training">Start training</a></li>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/GettingStarted.html#evaluation">Evaluation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/ForecastExample.html">Forecast examples</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/ForecastExample.html#create-a-api-client-and-query-forecasts">Create a API client and query forecasts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/ForecastExample.html#upload-a-forecast">Upload a forecast</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">HydroRL</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">Python Clients</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/python_clients.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="python-clients">
+<h1>Python Clients<a class="headerlink" href="#python-clients" title="Permalink to this heading"></a></h1>
+<p>There are two different python clients used to interact with the Web API.</p>
+<p>The first client, defined <a class="reference internal" href="apiclient.html"><span class="doc"> here</span></a> is a standard python client, where a client instance has all the required methods to interact with the Web API.</p>
+<p>The second client, defined <a class="reference internal" href="apiproxy.html"><span class="doc"> here</span></a> is a python client where the client returns different instances, depending on what method is called on the client. The returned instances themselves have defined methods and attributes. The returned instances from the client is documented  <a class="reference internal" href="poco.html"><span class="doc"> here</span></a>.</p>
+<p>Usage of both clients can be found in the <a class="reference internal" href="notebooks.html"><span class="doc">Example Notebooks</span></a>.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="apiclient.html">Python API Client</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apiproxy.html">Python API Proxy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="poco.html">Python Poco module</a></li>
+</ul>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="apiweb.html" class="btn btn-neutral float-left" title="Web API" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="apiclient.html" class="btn btn-neutral float-right" title="Python API Client" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Fraktal Norge AS.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

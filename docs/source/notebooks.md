@@ -8,7 +8,6 @@
 
     notebooks/GettingStarted.ipynb
     notebooks/ForecastExample.ipynb
-    notebooks/Running.ipynb
     
 ```
 

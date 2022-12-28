@@ -9,7 +9,7 @@ The second client, defined {doc}` here <./apiproxy>` is a python client where th
 Usage of both clients can be found in the {doc}`notebooks`. 
 
 ```{toctree}
-:maxdepth: 3
+:maxdepth: 1
 
 apiclient.md
 apiproxy
