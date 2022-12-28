@@ -1,0 +1,2 @@
+class NotAValidHydroSystem(Exception):
+    pass
