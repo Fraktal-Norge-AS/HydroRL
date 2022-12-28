@@ -127,3 +127,4 @@ nohup.out
 #Vscode workspace
 *.code-workspace
 experiment/
+docs/source/notebooks/*

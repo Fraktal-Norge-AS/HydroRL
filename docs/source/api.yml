@@ -1,0 +1,720 @@
+openapi: 3.0.1
+info:
+  title: HydroRL API
+  description: The API for HydroRL.
+  contact:
+    name: HPS Support
+    email: hps.support@fraktal.no
+  version: v1
+paths:
+  '/api/v1/evaluations/{evaluationUid}':
+    get:
+      tags:
+        - ApiV1
+      summary: Get evaluation data for specified evaluation
+      description: "Example:\r\n\r\n    GET /evaluations/00000000-0000-0000-0000-000000000000"
+      parameters:
+        - name: evaluationUid
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Returns an evaluation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiReportData'
+  /api/v1/forecasts:
+    post:
+      tags:
+        - ApiV1
+      summary: Create a forecast for a given hydrosystem
+      description: "Example:\r\n\r\n    POST /forecasts?hydrosystemUid=00000000-0000-0000-0000-000000000000&forecastName=hpsForecast"
+      parameters:
+        - name: hydrosystemUid
+          in: query
+          description: Uid of the hydrosystem.
+          required: true
+          schema:
+            type: string
+        - name: forecastName
+          in: query
+          description: Name of the forecast to be created
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Returns the created project run
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiForecast'
+  '/api/v1/forecasts/{forecastUid}':
+    post:
+      tags:
+        - ApiV1
+      summary: Post scenario data for specified scenario and forecast
+      description: "Remarks:\r\n\r\nScenarios for a given forecast must be of equal length (timesteps).<br />\r\n            \r\nExample:\r\n\r\n    POST /forecasts/00000000-0000-0000-0000-000000000000?scenario=2021\r\n    body ApiForecastScenario { ... }"
+      parameters:
+        - name: forecastUid
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: scenario
+          in: query
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ApiForecastScenario'
+        required: true
+      responses:
+        '200':
+          description: OK
+    get:
+      tags:
+        - ApiV1
+      summary: Get All scenarios for specified forecast and hydrosystem
+      description: "Example:\r\n\r\n    GET /forecasts/00000000-0000-0000-0000-000000000000"
+      parameters:
+        - name: forecastUid
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Returns list of forecasts
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiForecastScenarios'
+  '/api/v1/forecasts/{forecastUid}/scenarios/{scenario}':
+    get:
+      tags:
+        - ApiV1
+      summary: Get scenario data for specified scenario and forecast
+      description: "Example:\r\n\r\n    GET /forecasts/00000000-0000-0000-0000-000000000000/scenarios/2017"
+      parameters:
+        - name: forecastUid
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: scenario
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Returns scenario data
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiForecastScenario'
+  /api/v1/hydrosystems:
+    get:
+      tags:
+        - ApiV1
+      summary: Get all hydrosystems
+      description: "Example:\r\n\r\n    GET /hydrosystems"
+      responses:
+        '200':
+          description: Returns all hydrosystems
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ApiHydroSystem'
+  '/api/v1/hydrosystems/{hydrosystemUid}/forecasts':
+    get:
+      tags:
+        - ApiV1
+      summary: Get list of all forecasts for specified hydrosystem
+      description: "Remark:\r\n\r\nHydrosystem UID must exist\r\n            \r\n            \r\nExample:\r\n\r\n    GET /hydrosystems/00000000-0000-0000-0000-000000000000/forecasts"
+      parameters:
+        - name: hydrosystemUid
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Returns all reservoirs for specified hydrosystem
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ApiForecast'
+  '/api/v1/hydrosystems/{hydrosystemUid}/reservoirs':
+    get:
+      tags:
+        - ApiV1
+      summary: Get all reservoirs for specified hydrosystem
+      description: "Remark:\r\n\r\nHydrosystem UID must exist\r\n            \r\n            \r\nExample:\r\n\r\n    GET /hydrosystems/00000000-0000-0000-0000-000000000000/reservoirs"
+      parameters:
+        - name: hydrosystemUid
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Returns all reservoirs for specified hydrosystem
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ApiReservoir'
+  '/api/v1/projectruns/{projectRunUid}/evaluate':
+    put:
+      tags:
+        - ApiV1
+      summary: Evaluate a project run given runsettings and forecast
+      description: "Example:\r\n\r\n\tPOST /projectruns/00000000-0000-0000-0000-000000000000/evaluate?forecastUid=00000000-0000-0000-0000-000000000000\r\n    body RunSettings{ ... }"
+      parameters:
+        - name: projectRunUid
+          in: path
+          description: Project run UID for an existing project run
+          required: true
+          schema:
+            type: string
+        - name: forecastUid
+          in: query
+          description: Forecast UID for an existing forecast
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: Runsettings
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RunSettings'
+        required: true
+      responses:
+        '200':
+          description: Returns evaluation for the specified project run
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiRun'
+  '/api/v1/projectruns/{projectRunUid}/progress':
+    get:
+      tags:
+        - ApiV1
+      summary: Get current progress for project run
+      description: "Example:\r\n\r\n    GET /projectruns/00000000-0000-0000-0000-000000000000/progress"
+      parameters:
+        - name: projectRunUid
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Returns progress for project run
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RunDetails'
+  '/api/v1/projectruns/{projectRunUid}/rundetails':
+    get:
+      tags:
+        - ApiV1
+      summary: Get run details for specified project run
+      description: "Example:\r\n\r\n    GET /projectruns/00000000-0000-0000-0000-000000000000/rundetails"
+      parameters:
+        - name: projectRunUid
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Returns detail for project run
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RunDetails'
+  '/api/v1/projectruns/{projectRunUid}/solution':
+    get:
+      tags:
+        - ApiV1
+      summary: Get the best solution for a project run
+      description: "Example:\r\n\r\n    GET /projectruns/00000000-0000-0000-0000-000000000000/solution"
+      parameters:
+        - name: projectRunUid
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Returns solution for project run
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiReportData'
+  '/api/v1/projectruns/{projectRunUid}/terminate':
+    put:
+      tags:
+        - ApiV1
+      summary: Attempt to terminate a running project run
+      description: "Example:\r\n\r\n    PUT /projectrun/00000000-0000-0000-0000-000000000000/terminate"
+      parameters:
+        - name: projectRunUid
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RunDetails'
+  /api/v1/projects:
+    get:
+      tags:
+        - ApiV1
+      summary: Get all projects
+      description: "Example:\r\n\r\n    GET /projects"
+      responses:
+        '200':
+          description: Returns the projects
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ApiProject'
+    post:
+      tags:
+        - ApiV1
+      summary: Creates a project on specified hydrosystem UID and project name.
+      description: "Example:\r\n\r\n    POST /projects?name=hpsProject&hydrosystemUid=00000000-0000-0000-0000-000000000000"
+      parameters:
+        - name: name
+          in: query
+          description: Provide a unique name for the project
+          required: true
+          schema:
+            type: string
+        - name: hydrosystemUid
+          in: query
+          description: Hydrosystem UID for an existing system
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Returns the created project
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiProject'
+  '/api/v1/projects/{projectUid}/evaluations':
+    get:
+      tags:
+        - ApiV1
+      summary: Get all evaluations for a specified project
+      description: "Example:\r\n\r\n\tGET /projects/00000000-0000-0000-0000-000000000000/evaluations/"
+      parameters:
+        - name: projectUid
+          in: path
+          description: Project UID for an existing project
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Returns all project runs for the specified project
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ApiRun'
+  '/api/v1/projects/{projectUid}/projectruns':
+    get:
+      tags:
+        - ApiV1
+      summary: Get all project runs for a specified project
+      description: "Example:\r\n\r\n\tGET /projects/00000000-0000-0000-0000-000000000000/projectruns/"
+      parameters:
+        - name: projectUid
+          in: path
+          description: Project UID for an existing project
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Returns all project runs for the specified project
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ApiRun'
+  '/api/v1/projects/{projectUid}/run':
+    put:
+      tags:
+        - ApiV1
+      summary: Start a run for the given project.
+      description: "Example:\r\n\r\n    PUT /projects/00000000-0000-0000-0000-000000000000/run?forecastUid=00000000-0000-0000-0000-00000000000\r\n    body RunSettings{ ... }"
+      parameters:
+        - name: projectUid
+          in: path
+          description: Uid of the project.
+          required: true
+          schema:
+            type: string
+        - name: forecastUid
+          in: query
+          description: Uid of the forecast to use in the run.
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: Settingsobject containing run parameters
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RunSettings'
+        required: true
+      responses:
+        '200':
+          description: Returns the created project run
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiRun'
+  '/api/v1/projects/{projectUid}/runsettingstemplate':
+    get:
+      tags:
+        - ApiV1
+      summary: Returns a template for run settings for the specified project Uid.
+      description: "Example:\r\n\r\n\tGET /projects/00000000-0000-0000-0000-000000000000/runsettingstemplate"
+      parameters:
+        - name: projectUid
+          in: path
+          description: Project UID for an existing project
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Returns all project runs for the specified project
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RunSettings'
+components:
+  schemas:
+    AgentAlgorithm:
+      enum:
+        - SAC
+        - A2C
+        - DDPG
+        - TD3
+        - PPO
+      type: string
+    ApiForecast:
+      type: object
+      properties:
+        name:
+          type: string
+          nullable: true
+        uid:
+          type: string
+          nullable: true
+      additionalProperties: false
+    ApiForecastScenario:
+      type: object
+      properties:
+        timeIndex:
+          type: array
+          items:
+            type: string
+            format: date-time
+          nullable: true
+        inflowSeries:
+          type: array
+          items:
+            type: number
+            format: double
+          nullable: true
+        priceSeries:
+          type: array
+          items:
+            type: number
+            format: double
+          nullable: true
+      additionalProperties: false
+    ApiForecastScenarios:
+      type: object
+      properties:
+        scenarios:
+          type: array
+          items:
+            type: string
+          nullable: true
+      additionalProperties: false
+    ApiHydroSystem:
+      type: object
+      properties:
+        description:
+          type: string
+          nullable: true
+        name:
+          type: string
+          nullable: true
+        uid:
+          type: string
+          nullable: true
+      additionalProperties: false
+    ApiProject:
+      type: object
+      properties:
+        hydroSystem:
+          $ref: '#/components/schemas/ApiHydroSystem'
+        name:
+          type: string
+          nullable: true
+        uid:
+          type: string
+          nullable: true
+      additionalProperties: false
+    ApiReportData:
+      type: object
+      properties:
+        episodes:
+          type: array
+          items:
+            $ref: '#/components/schemas/ApiReportEpisode'
+          nullable: true
+        timeStamps:
+          type: array
+          items:
+            type: string
+            format: date-time
+          nullable: true
+      additionalProperties: false
+    ApiReportEpisode:
+      type: object
+      properties:
+        name:
+          type: string
+          nullable: true
+        series:
+          type: array
+          items:
+            $ref: '#/components/schemas/ApiTimeSeries'
+          nullable: true
+      additionalProperties: false
+    ApiReservoir:
+      type: object
+      properties:
+        minVolume:
+          type: number
+          format: double
+        maxVolume:
+          type: number
+          format: double
+        name:
+          type: string
+          nullable: true
+        uid:
+          type: string
+          nullable: true
+      additionalProperties: false
+    ApiRun:
+      type: object
+      properties:
+        startTime:
+          type: string
+          format: date-time
+          nullable: true
+        endTime:
+          type: string
+          format: date-time
+          nullable: true
+        settings:
+          $ref: '#/components/schemas/RunSettings'
+        forecast:
+          $ref: '#/components/schemas/ApiForecast'
+        name:
+          type: string
+          nullable: true
+        uid:
+          type: string
+          nullable: true
+      additionalProperties: false
+    ApiStepSeries:
+      type: object
+      properties:
+        name:
+          type: string
+          nullable: true
+        steps:
+          type: array
+          items:
+            type: number
+            format: double
+          nullable: true
+        values:
+          type: array
+          items:
+            type: number
+            format: double
+          nullable: true
+      additionalProperties: false
+    ApiTimeSeries:
+      type: object
+      properties:
+        name:
+          type: string
+          nullable: true
+        values:
+          type: array
+          items:
+            type: number
+            format: double
+          nullable: true
+      additionalProperties: false
+    EndStateIncentive:
+      enum:
+        - MeanEnergyPrice
+        - LastEnergyPrice
+        - ProvidedEndEnergyPrice
+        - Off
+      type: string
+    Noise:
+      enum:
+        - StandardDev
+        - White
+        - Off
+      type: string
+    RunDetails:
+      type: object
+      properties:
+        progress:
+          type: number
+          format: double
+        status:
+          type: array
+          items:
+            $ref: '#/components/schemas/ApiStepSeries'
+          nullable: true
+      additionalProperties: false
+    RunSettings:
+      type: object
+      properties:
+        comment:
+          type: string
+          default: comment
+          nullable: true
+        trainEpisodes:
+          type: integer
+          format: int32
+          default: 1000
+        endStateIncentive:
+          $ref: '#/components/schemas/EndStateIncentive'
+        noise:
+          $ref: '#/components/schemas/Noise'
+        previousProjectRunUid:
+          type: string
+          nullable: true
+        previousQValueProjectRunUid:
+          type: string
+          nullable: true
+        discountRate:
+          maximum: 0.3
+          minimum: 0
+          type: number
+          format: double
+          default: 0.04
+        startVolumes:
+          type: object
+          additionalProperties:
+            type: number
+            format: double
+          nullable: true
+        stepsInEpisode:
+          maximum: 10000
+          minimum: 20
+          type: integer
+          format: int32
+          default: 52
+        stepResolution:
+          $ref: '#/components/schemas/StepResolution'
+        stepFrequency:
+          maximum: 7
+          minimum: 1
+          type: integer
+          format: int32
+          default: 1
+        randomizeStartVolume:
+          type: boolean
+          default: true
+        rewardScaleFactor:
+          maximum: 1000
+          minimum: 0.001
+          type: number
+          format: double
+          default: 10
+        forecastClusters:
+          maximum: 20
+          minimum: 1
+          type: integer
+          format: int32
+          default: 7
+        priceOfSpillage:
+          maximum: 10
+          minimum: 0
+          type: number
+          format: double
+          default: 1
+        endEnergyPrice:
+          maximum: 3000
+          minimum: 0
+          type: number
+          format: double
+        evaluationEpisodes:
+          maximum: 500
+          minimum: 1
+          type: integer
+          format: int32
+          default: 5
+        evaluationInterval:
+          maximum: 1000
+          minimum: 1
+          type: integer
+          format: int32
+          default: 30
+        agentAlgorithm:
+          $ref: '#/components/schemas/AgentAlgorithm'
+      additionalProperties: false
+    StepResolution:
+      enum:
+        - Day
+        - Week
+        - Hour
+      type: string
+tags:
+  - name: ApiV1
+    description: 'Create, read and update hps'
