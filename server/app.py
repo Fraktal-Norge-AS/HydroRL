@@ -1,7 +1,7 @@
 import sys
 from pathlib import Path
 
-sys.path.insert(0, str(Path.home() / Path("gitsource/HydroScheduling")))
+# sys.path.insert(0, str(Path.home() / Path("gitsource/HydroScheduling")))
 
 import multiprocessing
 
@@ -12,10 +12,11 @@ from format_exception import format_exception
 import sqlite3
 import numpy as np
 from flask import Flask, Response, request
+from appsettings import appSettings
 
 from requestHandler import RequestHandler
 
-# dictConfig(appSettings.get_logging_config()) # Run once at startup
+dictConfig(appSettings.get_logging_config()) # Run once at startup
 logger = logging.getLogger("dcdb_python")
 logger_console = logging.getLogger("console_logger")
 

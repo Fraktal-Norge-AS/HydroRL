@@ -1,10 +1,10 @@
 import pytz
 import logging
-from logging.config import dictConfig
+
 import sqlalchemy as db
 from sqlalchemy.orm import sessionmaker
 from datetime import datetime
-from log_model import LogEntry
+from log_model import LogEntry, metadata
 
 logging.addLevelName(logging.INFO, "Information")
 logging.addLevelName(logging.WARNING, "Warning")
@@ -17,6 +17,8 @@ class SQLiteHandler(logging.Handler):
         super(SQLiteHandler, self).__init__()
 
         self.engine = db.create_engine(connectionString)
+        metadata.create_all(self.engine)
+
         self.Session = sessionmaker(bind=self.engine)
         self.session = self.Session()
 

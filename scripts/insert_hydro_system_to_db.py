@@ -3,7 +3,6 @@ import sys, os
 sys.path.insert(1, os.path.join(sys.path[0], '..'))
 
 from datetime import datetime
-from hps.exogenous.lyse_forecast import populate_forecast_from_df_to_db
 import matplotlib.pyplot as plt
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
