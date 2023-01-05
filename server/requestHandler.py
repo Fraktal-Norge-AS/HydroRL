@@ -9,7 +9,6 @@ from matplotlib.backends.backend_agg import FigureCanvasAgg
 from evaluator import start_evalaution
 from project_runner import start_run_project
 from project_status import ProjectStatus
-from csv_handler import CsvHandler
 from hps.rl.settings import RunSettings, RunSettingsSerializer
 from server.namegenerator import get_random_names
 from server.appsettings import appSettings
@@ -33,7 +32,7 @@ class RequestHandler:
             print("Already running")
         return "already_started"
 
-    def evalaute(self, eval_id):
+    def evaluate(self, eval_id):
         start_evalaution(eval_id)
         return "evalauting"
 
@@ -44,11 +43,6 @@ class RequestHandler:
         output = io.BytesIO()
         FigureCanvasAgg(drawing).print_png(output)
         return output
-
-    def add_series(self, filetype, file):
-        file.save(file.filename)
-        handler = CsvHandler(filetype, file.filename, appSettings.get_connection_string())
-        return handler.process()
 
     def create_run_settings(self, project_uid, agent_id):
         settings = RunSettings()

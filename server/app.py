@@ -64,7 +64,7 @@ def start_agents(project_uid, run_id):
 def evaluate(eval_id):
     try:
         logger.info("call /evaluate/{}".format(eval_id))
-        return reqHandler.evalaute(eval_id)
+        return reqHandler.evaluate(eval_id)
     except Exception as e:
         e_str = "Exception encountered in /evaluate/<path:eval_id>:\n"
         logger.exception(e_str + format_exception(e))
