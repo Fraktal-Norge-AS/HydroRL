@@ -1,7 +1,7 @@
 import sys
 from pathlib import Path
 
-# sys.path.insert(0, str(Path.home() / Path("gitsource/HydroScheduling")))
+sys.path.insert(0,str(Path().parent.resolve()))
 
 import multiprocessing
 
