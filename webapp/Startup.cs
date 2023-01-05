@@ -58,8 +58,8 @@ namespace DKWebapp
                     Description="The API for HydroRL.",
                     Contact=new OpenApiContact
                     {
-                        Name = "HPS Support",
-                        Email = "hps.support@fraktal.no",
+                        Name = "",
+                        Email = "",
                     }
                 });
 
@@ -75,7 +75,7 @@ namespace DKWebapp
             Static.PythonEndpoint = Configuration["PythonEndpoint"];
             Static.DBConnection = Configuration.GetConnectionString("DKConnection");
 
-            string logDb = Configuration.GetConnectionString("DKLogConnection");
+            string logDb = Configuration.GetConnectionString("DKLogConnection");            
 
             Log.Logger = new LoggerConfiguration()
                 .WriteTo.SQLite(logDb, "Logs", LogEventLevel.Information, null, true, TimeSpan.FromDays(1200), null, null, 10, 10)
