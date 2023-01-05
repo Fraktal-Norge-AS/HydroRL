@@ -1,8 +1,3 @@
-data/
-
-# Pyomo stuff
-*.lp
-
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -19,7 +14,8 @@ logs
 *.csv
 *.txt
 webapp/appsettings.Development.json
-
+data/
+!data/example_forecast_data.csv
 
 #.NET
 bin/
