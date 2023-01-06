@@ -39,8 +39,11 @@ See [Microsoft documentation](https://learn.microsoft.com/en-us/dotnet/core/inst
 Explain how to run it and how to use it
 
 - Start the flask server
+- Migration built?
+- Copy appsettings.json to appsettings.Development.json
+  - Change {PATH} in appsettings.Development.json to required path for databases
 - Start the web app
-  - This will also build the db
+  - This will also build the HPSDB.db sqlite database file. 
 - Popoulate the db with data. To do this you can use the code in scripts/load_nve_forecast_to_db.py. This will collect historical inflows from the NVE api that can be used as scenarios. Note that for energy price you will have to write your own function to collect them. The db should also be populated with hydro systems. This is done by running insert_hydro_system_to_db.py in scripts/.
  
 

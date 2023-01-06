@@ -123,17 +123,3 @@ session = Session()
 hydro_systems = ["small", "medium", "large"]
 add_reservoirs_to_db(hydro_systems)
 # upload_initial_reservoir_value(hydro_systems, 15)
-
-#%%
-def dell():
-#%%
-    for i in session.query(ProjectRunStartVolume).all():
-        session.delete(i)
-
-    for i in session.query(Reservoir).all():
-        session.delete(i)
-
-# %%
-    session.commit()
-
-# %%
