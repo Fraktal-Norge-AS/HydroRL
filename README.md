@@ -39,8 +39,11 @@ See [Microsoft documentation](https://learn.microsoft.com/en-us/dotnet/core/inst
 Explain how to run it and how to use it
 
 - Start the flask server
+- Migration built?
+- Copy appsettings.json to appsettings.Development.json
+  - Change {PATH} in appsettings.Development.json to required path for databases
 - Start the web app
-  - This will also build the db
+  - This will also build  the HPSDB.db sqlite database file. 
 - Popoulate the db with data. 
   - Run `python scripts/insert_hydro_system_to_db.py`, to add hydro systems.
   - Run `python scripts/insert_example_forecasts_to_db.py`, to add example forecasts to db. 
