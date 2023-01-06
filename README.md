@@ -41,7 +41,9 @@ Explain how to run it and how to use it
 - Start the flask server
 - Start the web app
   - This will also build the db
-- Popoulate the db with data. To do this you can use the code in scripts/load_nve_forecast_to_db.py. This will collect historical inflows from the NVE api that can be used as scenarios. Note that for energy price you will have to write your own function to collect them. The db should also be populated with hydro systems. This is done by running insert_hydro_system_to_db.py in scripts/.
+- Popoulate the db with data. 
+  - Run `python scripts/insert_hydro_system_to_db.py`, to add hydro systems.
+  - Run `python scripts/insert_example_forecasts_to_db.py`, to add example forecasts to db. 
  
 
 
@@ -65,7 +67,7 @@ Output:
 ## Build and Test
 
 
-### Build web API documentation
+### Build web API documentation into the sphinx documentation
 To build yaml file with swagger documentation, follow the steps provided [here](https://medium.com/@woeterman_94/how-to-generate-a-swagger-json-file-on-build-in-net-core-fa74eec3df1).
 
 With the Swashbuckle CLI tool installed, run the following
