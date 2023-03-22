@@ -1,0 +1,36 @@
+version: '3'
+services:
+  engine:
+    hostname: "flaskengine"
+    build:     
+      context: .
+      dockerfile: ./docker/engine/Dockerfile
+    volumes:
+      - hydrorl-db:/hps_server
+    networks:
+      - proxynet
+    
+  api:    
+    hostname: "apiserver"
+    build: 
+      context: .
+      dockerfile: ./docker/api/Dockerfile
+    ports:
+     - "5400:5400"
+     - "8080:80"
+    volumes:
+      - hydrorl-db:/hps_server
+    networks:
+      - proxynet
+
+volumes:
+  hydrorl-db:
+    driver: local
+    driver_opts:
+      o: bind
+      type: none
+      device: /home/mah/hps_server
+  
+networks:
+  proxynet:
+    name: hydrorl_network

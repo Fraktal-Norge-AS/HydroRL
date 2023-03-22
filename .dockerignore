@@ -1,0 +1,15 @@
+*
+!webapp/
+webapp/bin
+!webapp/appsettings.Development.json
+!core/
+!data/
+!hps/
+!hps_api_client/
+!scripts/
+!server/
+!hydro_system_models.py
+!hydro_systems.py
+!pyproject.toml
+!README.md
+!requirements.txt

@@ -16,12 +16,13 @@ from appsettings import appSettings
 
 from requestHandler import RequestHandler
 
+sqlite3.register_adapter(np.int64, lambda val: int(val))
+sqlite3.register_adapter(np.int32, lambda val: int(val))
+
+
 dictConfig(appSettings.get_logging_config()) # Run once at startup
 logger = logging.getLogger("dcdb_python")
 logger_console = logging.getLogger("console_logger")
-
-sqlite3.register_adapter(np.int64, lambda val: int(val))
-sqlite3.register_adapter(np.int32, lambda val: int(val))
 
 logger.info("Starting service")
 try:
@@ -103,3 +104,6 @@ def get_hydrosystem(system):
         e_str = "Exception encountered in /hydropowersystem/<path:system>:\n"
         logger.exception(e_str + format_exception(e))
         raise e
+
+if __name__=='__main__':
+    app.run(debug=False)

@@ -1,62 +1,63 @@
-# The HydroRL Package
+# The HydroRL Application
 
 ## Project Description
-The HydroRL is a reinforcement learning based model to perform hydropower scheduling. It has packages to construct hydro power systems and running Stable Baselines3 based RL algorithms. 
+The HydroRL is a reinforcement learning based model to perform hydropower scheduling. It has packages to construct hydro power systems and running Stable Baselines3 (SB3) based RL algorithms. 
+
+The problem we are trying to solve is to maximize the utilization of the hydropower system, which is modelled by reservoirs, power stations, gates and connections between them. The model requires a forecast of energy prices and inflows to the reservoirs. Based on those forecasts and the required configuration (time horizon, end value, etc.) the model aims at maximizing the expected reward of the specified time horizon.
+
+For problems with weekly time resolutions we managed to get comparable results as to another model based on Stochastic Dual Dynamic Programming (SDDP), used commercially by hydropower companies. This was also the case for more complex hydropower systems, with multiple waterways, reservoirs and power stations. 
+
+For problems where we increased the time resolution, from daily to hourly we observed that the model struggled with converging. We tried a variety of hyperparameter tuning, reward function tuning, splitting the problem into a short-term (hourly) and long-term (weekly) model but where not able to obtain comparable results as 
+
+Note that in an earlier version we used Tensorflow Agents as the RL engine, we found it hard to work with so we started using SB3 instead. 
 
 
-- What does it do?
-- Why you used the technology you did
-- Some challanges you met and features to implement in the future
+## Overview
+
+Below is an overview of the different components of the HydroRL application.
+
+![HydroRL Overview](media/HPS-MVP1.png)
+
+For more details on the stack and different components see [SYSTEM_OVERVIEW](SYSTEM_OVERVIEW).
+
+### Steps for running the project
+The HydroRL application consist of one flask application that consist of the business layer, an application server that hosts the client facing API written in .NET Core, and the sqlite database.
+
+The following describes the initialization of the application
+
+1. Start the web app
+    - This will also build  the HPSDB.db sqlite database file. 
+2. Start the flask server
+3. Migration built?
+4. Copy appsettings.json to appsettings.Development.json
+    - Change {PATH} in appsettings.Development.json to required path for databases
+5. Popoulate the db with data.
+    - Run `python scripts/insert_hydro_system_to_db.py`, to add hydro systems.
+    - Run `python scripts/insert_example_forecasts_to_db.py`, to add example forecasts to db. 
 
 
-## Getting Started
+## Usage
+The easiest way to get started is to start the application with [docker compose](https://docs.docker.com/compose/), follow [these](https://docs.docker.com/compose/install/) instructions to install it. This takes cares of all the nitty details and ensures you have an running application.
 
-
-### Software dependencies
-The package has been developed in a conda environment described in `./tfa_conda_env.yml'. The conda environment can be set up as following:
-
-From your home dir
- 1. Download miniconda distribution. Run `wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh`
- 2. Install miniconda. Run `bash Miniconda3-latest-Linux-x86_64.sh`
-    - Enter to accept installation on your home directory
-    - Promt yes to run conda init
-    - Restart the shell.
- 3. Run `conda env create -f {repo_dir}/tfa_conda_env.yml`, where `{repo_dir}` is the path to this repository.
-        - This creates a conda environment called `tfa22` with additional dependencies.
- 4. Run `conda activate tfa22`
-
-#### Install .NET
-
-It was a problem with some of the packages related to entity framework, to avoid this we ran an older version of .NET. To install it, run the following
+After docker composed is installed, clone this repo:
 ```
-sudo apt-get update && \
-  sudo apt-get install -y dotnet-sdk-2.2
+git clone https://github.com/Fraktal-Norge-AS/HydroRL.git
 ```
-See [Microsoft documentation](https://learn.microsoft.com/en-us/dotnet/core/install/linux-ubuntu) for more information.
 
+Build the docker containers (note that this might take a couple of minutes):
+```
+docker compose build
+```
 
-### Run the project
-Explain how to run it and how to use it
-
-- Start the flask server
-- Migration built?
-- Copy appsettings.json to appsettings.Development.json
-  - Change {PATH} in appsettings.Development.json to required path for databases
-- Start the web app
-  - This will also build  the HPSDB.db sqlite database file. 
-- Popoulate the db with data. 
-  - Run `python scripts/insert_hydro_system_to_db.py`, to add hydro systems.
-  - Run `python scripts/insert_example_forecasts_to_db.py`, to add example forecasts to db. 
- 
+Run the application
+```
+docker compose up
+```
 
 
 ### VS Code Misc.
 
 The namespace of the package is fairly large. By default Ubuntu can watch 8192 file handles. If the notification <em>"Visual Studio Code is unable to watch for file changes in this large workspace"</em> pops up, add ```fs.inotify.max_user_watches=100000``` or any number up to 524 288 at the bottom of the file ```/etc/sysctl.conf```. Load the new values by running ```sudo sysctl -p```.
-
-### Solvers
-
-Install cbc solver with ```sudo apt-get install coinor-cbc```, available [here](https://ubuntu.pkgs.org/20.10/ubuntu-universe-armhf/coinor-libcbc-dev_2.10.5+ds1-1_armhf.deb.html). Check that the version is up to date (v2.10+). If not, build the cbc package from source using [coinbrew](https://coin-or.github.io/coinbrew/).
 
 
 ## Example
@@ -76,4 +77,18 @@ To build yaml file with swagger documentation, follow the steps provided [here](
 With the Swashbuckle CLI tool installed, run the following
 ```
 ASPNETCORE_ENVIRONMENT=Development swagger tofile --yaml --output ../docs/source/api.yml bin/Debug/netcoreapp2.2/DKWebapp.dll v1
-````
+```
+
+
+## License
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Acknowledgement
+We would like to thank Sindre Tøsse, Vegard Kyllingstad and Øyivind Høivik at Lyse Produksjon AS for providing data and feedback to the project. 
+
+Team members at Fraktal involved on the project:
+ - Jan Ivar Kjøde
+ - Lars Kartevoll
+ - Martin Hjelmeland
+ - Stian Bakke
+ - Siv Sødal

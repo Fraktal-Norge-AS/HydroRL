@@ -253,7 +253,6 @@ class ApiProxy:
 
         self.api_client.show_progress(run.uid, **plt_kwargs)
 
-        self.api_client.show_progress(run.uid, **plt_kwargs)
     def plot_solution(self, run : ApiRun):
         """Presents the best solution achived by any agent in the run.
         
