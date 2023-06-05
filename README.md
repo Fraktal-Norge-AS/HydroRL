@@ -1,5 +1,7 @@
 # HydroRL: A Reinforcement Learning Approach to Hydropower Scheduling
 
+> **Note**: This software may be unstable. Unexpected errors and bugs may occur. Please use it with caution.
+
 ## Project Description
 
 ### Introduction
