@@ -159,5 +159,5 @@ Since the operations performed in the Business layer are asynchronous relative t
 As mentioned, a client-side Python library has been produced to facilitate end user development and integration.
 This library has to be maintained and extended to match the functionality of the API contract exposed server-side.
 A [tool](webapp/PythonGen.cs) has been developed to ensure that the domain objects in the library are synchronized with those defined on the server side.
-This tool needs to be run when changes are made to the domain model. The functional Client side API must be manually maintained for mow.
+This tool needs to be run when changes are made to the domain model. The functional Client side API must be manually maintained for now.
 

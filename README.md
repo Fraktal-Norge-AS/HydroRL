@@ -3,7 +3,7 @@
 ## Project Description
 
 ### Introduction
-The HydroRL is a reinforcement learning based model to perform hydropower scheduling. It has packages to construct hydro power systems and running Stable Baselines3 (SB3) based RL algorithms. 
+The HydroRL is a reinforcement learning based model to perform hydropower scheduling. It has packages to construct hydro power systems and running [Stable Baselines3 (SB3)](https://stable-baselines3.readthedocs.io/en/master/) based RL algorithms. 
 
 ### Problem statement
 The problem we are trying to solve is to maximize the utilization of the hydropower system, which is modelled by reservoirs, power stations, gates and connections between them. The model requires a forecast of energy prices and inflows to the reservoirs. Based on those forecasts and the required configuration (time horizon, end value, etc.) the model aims at maximizing the expected reward of the specified time horizon.
@@ -13,7 +13,7 @@ For problems with weekly time resolutions we managed to get comparable results a
 
 For problems where we increased the time resolution, from daily to hourly we observed that the model struggled with converging. We tried a variety of hyperparameter tuning, reward function tuning, splitting the problem into a short-term (hourly) and long-term (weekly) model but where not able to obtain comparable results as the model based on SDDP.
 
-Note that in an earlier version we used Tensorflow Agents as the RL engine, however, we found SB3 to be easier to work with. 
+Note that in an earlier version we used [Tensorflow Agents](https://www.tensorflow.org/agents) as the RL engine, however, we found SB3 to be easier to work with. 
 
 
 ## Overview
@@ -49,7 +49,7 @@ Run the application
 docker compose up
 ```
 
-If everything succeeds you can now query the API on http://0.0.0.0:5400. 
+If everything succeeds you can now query the API on http://0.0.0.0:5400. The swagger can be found here: http://0.0.0.0:5400/swagger/index.html.
 
 You might have to change the access rights to the database files. If you experience an error (`sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) attempt to write a readonly database`) change the permissions of the databases:
 
@@ -61,11 +61,11 @@ chown ${USER}:${USER} HPSDB.db log.db
 
 You should now be able to read and write to the database. 
 
-Install python 3.7 and run 
+[Install python](https://realpython.com/installing-python/) and run 
 ```
 python -m venv .venv
 source .venv/bin/activate
-pip install -r requirements.txt
+pip install -r requirements_api.txt
 ```
 Populate the database with data by running these two scripts
 
