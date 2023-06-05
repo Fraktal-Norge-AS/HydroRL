@@ -29,7 +29,7 @@ volumes:
     driver_opts:
       o: bind
       type: none
-      device: /home/mah/hps_server
+      device: /home/${USER}/hps_server
   
 networks:
   proxynet:

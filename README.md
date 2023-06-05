@@ -44,6 +44,8 @@ After docker composed is installed, clone this repo:
 git clone https://github.com/Fraktal-Norge-AS/HydroRL.git
 ```
 
+Create a directory `hps_server` directory in `/home/${USER}/`, it will be used to store the HPSDB.db and the logging database. The location of this database can changed by altering the volume location in the [docker-compose.yml](docker-compose.yml) file.
+
 Build the docker containers (note that this might take a couple of minutes):
 ```
 docker compose build
@@ -54,22 +56,33 @@ Run the application
 docker compose up
 ```
 
+If everything succeeds you can now query the API on http://0.0.0.0:5400. 
 
-### VS Code Misc.
+You might have to change the access rights to the database files. If you experience an error (`sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) attempt to write a readonly database`) change the permissions of the databases:
 
-The namespace of the package is fairly large. By default Ubuntu can watch 8192 file handles. If the notification <em>"Visual Studio Code is unable to watch for file changes in this large workspace"</em> pops up, add ```fs.inotify.max_user_watches=100000``` or any number up to 524 288 at the bottom of the file ```/etc/sysctl.conf```. Load the new values by running ```sudo sysctl -p```.
-
-
-## Example
-
-```python
-code
 ```
-Output:
+cd /home/${USER}/hps_server/
+chmod 774 HPSDB.db log.db
+chown ${USER}:${USER} HPSDB.db log.db
+```
 
+You should now be able to read and write to the database. 
 
-## Build and Test
+Install python 3.7 and run 
+```
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+```
+Populate the database with data by running these two scripts
 
+```
+python scripts/insert_hydro_system_to_db.py
+python scripts/insert_example_forecast_to_db.py
+```
+The last script will take a few minutes to run.
+
+Now, open some of the notebooks located here to see how to use them 
 
 ### Build web API documentation into the sphinx documentation
 To build yaml file with swagger documentation, follow the steps provided [here](https://medium.com/@woeterman_94/how-to-generate-a-swagger-json-file-on-build-in-net-core-fa74eec3df1).
