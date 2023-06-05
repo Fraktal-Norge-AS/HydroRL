@@ -17,7 +17,7 @@ namespace DKWebapp
     {
         public static void Main(string[] args)
         {
-            new PythonGen("../hps_api_client/poco.py");
+            // new PythonGen("../hps_api_client/poco.py"); // Remove comment to update poco.py
 
             CreateWebHostBuilder(args).Build().Run();
         }
