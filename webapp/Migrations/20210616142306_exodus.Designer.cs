@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DKWebapp.Migrations
 {
     [DbContext(typeof(ProjectContext))]
-    [Migration("20230105081633_initial")]
-    partial class initial
+    [Migration("20210616142306_exodus")]
+    partial class exodus
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

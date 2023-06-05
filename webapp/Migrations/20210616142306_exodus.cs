@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace DKWebapp.Migrations
 {
-    public partial class initial : Migration
+    public partial class exodus : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
